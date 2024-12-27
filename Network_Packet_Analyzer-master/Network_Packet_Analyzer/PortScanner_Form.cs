@@ -49,6 +49,11 @@ namespace Network_Packet_Analyzer
             string ip = txtIPAddress.Text;
             int startPort = int.Parse(txtStartPort.Text);
             int endPort = int.Parse(txtEndPort.Text);
+            if (endPort > 255)
+            {
+                MessageBox.Show("Can't be greater than 255");
+                return;
+            }
 
             for (int port = startPort; port <= endPort; port++)
             {
